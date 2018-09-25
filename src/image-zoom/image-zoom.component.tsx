@@ -446,7 +446,7 @@ export default class ImageViewer extends React.Component<Props, State> {
         if (evt.nativeEvent.changedTouches.length === 1 && moveDistance < (this.props.clickDistance || 0)) {
           this.singleClickTimeout = setTimeout(() => {
             if (this.props.onClick) {
-              this.props.onClick();
+              this.props.onClick(evt);
             }
           }, this.props.doubleClickInterval);
         } else {
